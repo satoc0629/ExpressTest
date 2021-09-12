@@ -7,6 +7,7 @@ let logger = require('morgan');
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let etagRouter = require('./routes/etag')
+const cors = require("cors");
 
 let app = express();
 
@@ -39,5 +40,7 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
+app.use(cors())
 
 module.exports = app;

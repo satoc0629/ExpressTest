@@ -1,11 +1,13 @@
 let express = require('express');
 const moment = require("moment");
 const {etag} = require("express/lib/utils");
+const cors = require("cors");
 let router = express.Router();
 let nonStart = true
 let date
 let etagRecentContent
 
+router.use(cors())
 /* GET etag page. */
 router.get('/', function (req, res, next) {
     console.log("/etag start.")
