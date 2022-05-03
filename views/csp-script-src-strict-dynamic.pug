@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    p Server Date #{date}
+    script(nonce=serverNonce).
+        console.log("inline script readed")
+        const externalScript = document.createElement("script")
+        externalScript.innerHTML = "console.log('inner script')"
+        document.body.append(externalScript)
+    br
+    a(href="./") index page

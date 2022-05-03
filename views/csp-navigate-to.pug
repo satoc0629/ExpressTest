@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    p Server Date #{date}
+    a(href="https://google.com") google.com
+    form(action="https://google.com")
+        button(type="submit") google.com
+    br
+    a(href="./") index page

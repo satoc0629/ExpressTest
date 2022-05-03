@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    p Server Date #{date}
+    p nonce is #{serverNonce}
+    script(nonce=serverNonce).
+        console.log("inline script readed")
+    br
+    a(href="./") index page
+

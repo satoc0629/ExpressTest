@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    p Server Date #{date}
+    p nonce is #{serverNonce}
+    a(href="./") index page
+    br
+    button(onclick="console.log('clicked.');") script-src-attr-test
+    script(nonce=serverNonce).
+        console.log("inline script readed")
+        const externalScript = document.createElement("script")
+        externalScript.src = "/javascripts/csp-test-external.js"
+        document.body.append(externalScript)
